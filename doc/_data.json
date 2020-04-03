@@ -1,0 +1,221 @@
+{
+    "version": "0.1",
+    "pageContent":
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems":
+		{
+            "_common":
+      			{
+                "buttonBackToGallery":
+        				{
+                    "name": "Back To Gallery",
+          					"method": "backToGallery()",
+          					"idName": "backToGallery"
+                },
+                "buttonStartTutorial":
+        				{
+                    "name": "Start Tutorial",
+          					"method": "startTutorialFromDetailsScreen()",
+          					"idName": "startTutorial"
+                },
+        				"buttonViewDetails":
+        				{
+                    "name": "View Details",
+          					"method": "viewDetails()",
+          					"idName": "stepsViewDetails"
+                }
+            }
+        }
+    },
+    "tutorial":
+  	{
+        "_common":
+    		{
+            "name": "Getting started with ACEv11 - Creating a very simple message flow",
+            "shortDescription": "Learn how to quickly create a very simple message flow",
+            "durationText": "This tutorial takes approximately",
+            "durationTime": "5 minutes",
+            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+            "resourceToOpen": "SimpleFlow",
+            "helpLink":
+      			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.ace.home.doc/help_home.htm"
+            }
+        },
+        "pageDetails":
+    		{
+            "topicsName": "Tutorial Topics",
+            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+            "topicList":
+      			[
+                {
+                    "title": "Creating a message flow"
+                },
+                {
+                    "title": "Testing a message flow"
+                }
+            ],
+            "outcomesName": "Learning outcomes",
+            "_outcomesComment": "Start learning some product basics with a very simple Toolkit use case",
+            "outcomeList":
+      			[
+                {
+                    "title": "Understand the concept of a message flow"
+                },
+                {
+                    "title": "Understand how to create a message flow from scratch"
+                }
+            ],
+            "summary":
+      			{
+                "overviewName": "OVERVIEW",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "sections":
+        				[
+                    {
+                        "section": "This tutorial helps you to create a message flow for the first time. Message flows are created in the IBM App Connect Enterprise Toolkit."
+                    },
+                    {
+                        "section": "Once you have created the flow, you will learn how to use the Toolkit to run the message flow and test it by sending data through it."
+                    }
+                ]
+            }
+        },
+        "pageSteps":
+    		{
+            "create":
+      			{
+                "overview":
+        			{
+                    "name": "Create",
+                    "heading": "Create the Message Flow",
+                    "_createComment": "A description of what will happen when the user clicks Import.",
+                    "sections":
+          					[
+						{
+                       "section":"<b>Create an Application project to hold the new message flow</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                        	{
+                            "details": "Message flows are created in the Toolkit using a drag and drop editor. The actions of this editor are executed on a file which has a .msgflow extension. Saving your changes causes this file to be updated in your workspace. Before creating the message flow, you will need to create a project which will be used to store it. The Toolkit offers several different types of project which can be used to store message flows. Users who are familiar with older versions of App Connect Enterprise might be familiar with using Integration Projects for this purpose. Although these projects still exist, a better choice particularly if you are entirely new to App Connect Enterprise would be to use an Application project."
+							},
+							{
+							"details": "As is common with Eclipse based tools, there are several handy shortcuts and alternate ways to make navigation as easy as possible; but all these options will take you to the same New Application wizard. For example, if you've just launched a new workspace for the first time you will see a <span class='uicontrol'>Quick Starts</span> page with a link to <span class='uicontrol'>Start by creating an application</span>. Regardless of your starting point, you will be able to use the menus at the top of the Toolkit and select <span class='uicontrol'>File - New - Application</span>"
+							},
+							{
+							"details": "When the wizard launches, provide an Application name such as <span class='uicontrol'>ExampleApplication</span> and click Finish."
+							}						
+						  ]
+                        }
+					  },
+					  {
+                       "section":"<b>Create the message flow</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {						
+							"details": "In the Application Development view (normally in the top left corner of your Toolkit) you will see that the application has been created. Underneath <span class='uicontrol'>ExampleApplication</span>, click where it says <span class='uicontrol'>(New...)</span>. If you can't see where this is, you can also go to the top menu and choose <span class='uicontrol'>File - New - Message flow</span>. When the wizard launches, ensure that the Container selection is set to <span class='uicontrol'>ExampleApplication</span>. Note that the term Container, is just another word for project. Provide a Message Flow name such as <span class='uicontrol'>ExampleMessageFlow</span>, then click Finish."
+							},
+							{
+							"details": "<span class='uicontrol'>ExampleMessageFlow.msgflow</span> will open in an editor. The flow starts off empty, but down the left side of the flow editor you will see a palette with a large number of labelled drawers, each with its own icon. A message flow node is a processing step in a message flow. You can wire message flow nodes together to define the order of processing. Each message flow node receives a message, performs a set of actions, and typically passes on the message to the next node in the message flow."
+							},
+							{
+							"details": "Expand the HTTP drawer, and drag and drop two message flow nodes - an HTTPInput and an HTTPReply - on to the canvas. You will see four terminals on the right side of the HTTPInput message flow node. Wire the two message flow nodes together by clicking on the second terminal down (labelled <span class='uicontrol'>Out</span> if you hover over it) on the HTTPInput and then click on the HTTPReply node. If you find it easier, you could right-click on the HTTPInput node and select <span class='uicontrol'>Create connections</span> and use the menu which pops up. Save the message flow using the keyboard shortcut Ctrl-S, or from the top menu <span class='uicontrol'>File - Save</span>"
+							}						
+						  ]
+                        }
+					  },
+					 {
+                       "section":"<b>Edit the properties of the HTTPInput node</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+							{
+							"details": "You will now see a small red cross displayed on the HTTPInput node. If you hover over it you will see an error telling you there is an unset, yet mandatory, property. To fix this, right-click on the HTTPInput node and select <span class='uicontrol'>Properties</span>. Focus will shift to the Properties tab which is found below the picture of the message flow itself, a few tabs to the left of the Tutorial Steps view where you are reading this text! Fill out the <span class='uicontrol'>Path suffix for URL</span> property with the value <span class='uicontrol'>\/ExampleMessageFlow</span> being careful to include the leading slash character. Save the message flow again and the error should be resolved and the red cross on the HTTPInput node should disappear."
+							},
+							{
+							"details": "Congratulations, you have just created your first message flow. Move to the Prepare section of the tutorial and we will prepare to test the flow."
+							}						
+                    	  ]
+						}
+					 }
+					]
+            		}
+				},
+            "prepare":
+      			{
+                "overview":
+        				{
+                    "name": "Prepare",
+                    "heading": "Prepare an Integration Server to test the message flow",
+                    "_prepareComment": "Creating an IntegrationServer:",
+							"sections":
+          					[
+                      {
+                       "section":"<b>Create an Integration Server</b>",
+						  "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {
+                                "details": "Next we will test the message flow using a local integration server, which we can create from within the Toolkit. If you're using a Toolkit earlier than version 11.0.0.7, then you will need to open an App Connect Enterprise Command Console and start an integration server that way. This alternate option is detailed in the <a href='https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn03995_.html'>Knowledge Center</a>, but we will progress in this tutorial assuming you're using our most up to date Toolkit capabilities."
+                            },
+                            {
+                                "details": "From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."
+                            }
+                          ]
+                        }
+					  }
+					  ]
+                }
+            },
+            "run":
+      			{
+                "overview":
+        				{
+                    "name": "Run",
+                    "heading": "Test the message flow using the local Integration Server",
+                    "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+                    "sections":
+          					[
+                        {
+                                "section":"<b>Testing using the Flow Exerciser</b>",
+                            "steps":
+              							{
+                                "type": "ordered",
+                                "details":
+                								[
+                                    {
+                                        "details": "The message flow you created should still be open in the main window. At the top of the flow canvas, click on the circular red record button (just to the right of the <span class='uicontrol'>Flow Exerciser</span> text) to start the Flow Exerciser. Agree to the confirmation dialog which warns that the message flow is owned by an Application, and after a few seconds the background of the flow canvas will change to a grey colour. Another confirmation dialog will appear with a Ready to record message status. Read through the information on the dialog and click Close."
+                                    },
+                                    {
+                                        "details": "Back at the top of the flow, click on the Send Message icon to create an input message."
+                                    },
+									{
+										"details": "The Send Message dialog will open with instructions for how to create an input message. Click the New button, type some text (such as the classic <b>Hello world</b> for example!) in the Main window and click Send."
+									},
+									{
+										"details": "A Progress Information dialog will appear showing the message has been sent, and a reply received. The same data should be echoed back in the reply."
+									},
+									{
+										"details": "Congratulations, you have just successfully tested your first message flow! Click on the Close button and a green line should show the path the message took between the HTTPInput and HTTPReply nodes. Use the Flow Exerciser buttons at the top of the message flow to either send more test data or to return the flow to editting mode."
+									}
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

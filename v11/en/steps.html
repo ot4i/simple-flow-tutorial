@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
+		
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
+
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4 class="title">Getting started with ACEv11 - Creating a very simple message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how to quickly create a very simple message flow </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+		    	<div class="content active" id="panel21">
+		    		
+					<div class="small-12 medium-12 large-12 columns">
+					
+				      	<div class="row content-details">
+					      	<h4>Create the Message Flow</h4>
+					        
+						    
+								<p> <b>Create an Application project to hold the new message flow</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Message flows are created in the Toolkit using a drag and drop editor. The actions of this editor are executed on a file which has a .msgflow extension. Saving your changes causes this file to be updated in your workspace. Before creating the message flow, you will need to create a project which will be used to store it. The Toolkit offers several different types of project which can be used to store message flows. Users who are familiar with older versions of App Connect Enterprise might be familiar with using Integration Projects for this purpose. Although these projects still exist, a better choice particularly if you are entirely new to App Connect Enterprise would be to use an Application project.
+										
+										</li>
+									
+										<li> As is common with Eclipse based tools, there are several handy shortcuts and alternate ways to make navigation as easy as possible; but all these options will take you to the same New Application wizard. For example, if you've just launched a new workspace for the first time you will see a <span class="uicontrol">Quick Starts</span> page with a link to <span class="uicontrol">Start by creating an application</span>. Regardless of your starting point, you will be able to use the menus at the top of the Toolkit and select <span class="uicontrol">File - New - Application</span>
+										
+										</li>
+									
+										<li> When the wizard launches, provide an Application name such as <span class="uicontrol">ExampleApplication</span> and click Finish.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> <b>Create the message flow</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> In the Application Development view (normally in the top left corner of your Toolkit) you will see that the application has been created. Underneath <span class="uicontrol">ExampleApplication</span>, click where it says <span class="uicontrol">(New...)</span>. If you can't see where this is, you can also go to the top menu and choose <span class="uicontrol">File - New - Message flow</span>. When the wizard launches, ensure that the Container selection is set to <span class="uicontrol">ExampleApplication</span>. Note that the term Container, is just another word for project. Provide a Message Flow name such as <span class="uicontrol">ExampleMessageFlow</span>, then click Finish.
+										
+										</li>
+									
+										<li> <span class="uicontrol">ExampleMessageFlow.msgflow</span> will open in an editor. The flow starts off empty, but down the left side of the flow editor you will see a palette with a large number of labelled drawers, each with its own icon. A message flow node is a processing step in a message flow. You can wire message flow nodes together to define the order of processing. Each message flow node receives a message, performs a set of actions, and typically passes on the message to the next node in the message flow.
+										
+										</li>
+									
+										<li> Expand the HTTP drawer, and drag and drop two message flow nodes - an HTTPInput and an HTTPReply - on to the canvas. You will see four terminals on the right side of the HTTPInput message flow node. Wire the two message flow nodes together by clicking on the second terminal down (labelled <span class="uicontrol">Out</span> if you hover over it) on the HTTPInput and then click on the HTTPReply node. If you find it easier, you could right-click on the HTTPInput node and select <span class="uicontrol">Create connections</span> and use the menu which pops up. Save the message flow using the keyboard shortcut Ctrl-S, or from the top menu <span class="uicontrol">File - Save</span>
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> <b>Edit the properties of the HTTPInput node</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> You will now see a small red cross displayed on the HTTPInput node. If you hover over it you will see an error telling you there is an unset, yet mandatory, property. To fix this, right-click on the HTTPInput node and select <span class="uicontrol">Properties</span>. Focus will shift to the Properties tab which is found below the picture of the message flow itself, a few tabs to the left of the Tutorial Steps view where you are reading this text! Fill out the <span class="uicontrol">Path suffix for URL</span> property with the value <span class="uicontrol">/ExampleMessageFlow</span> being careful to include the leading slash character. Save the message flow again and the error should be resolved and the red cross on the HTTPInput node should disappear.
+										
+										</li>
+									
+										<li> Congratulations, you have just created your first message flow. Move to the Prepare section of the tutorial and we will prepare to test the flow.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+						
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
+						<div class="row content-details">
+						  	<h4>Prepare an Integration Server to test the message flow</h4>
+						    
+						    
+								<p> <b>Create an Integration Server</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Next we will test the message flow using a local integration server, which we can create from within the Toolkit. If you're using a Toolkit earlier than version 11.0.0.7, then you will need to open an App Connect Enterprise Command Console and start an integration server that way. This alternate option is detailed in the <a href="https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn03995_.html">Knowledge Center</a>, but we will progress in this tutorial assuming you're using our most up to date Toolkit capabilities.
+										
+										</li>
+									
+										<li> From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class="uicontrol">Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+					<div class="small-12 medium-12 large-12 columns">
+					
+				    	<div class="row content-details">
+					      	<h4>Test the message flow using the local Integration Server</h4>
+					        
+						    
+								<p> <b>Testing using the Flow Exerciser</b> </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> The message flow you created should still be open in the main window. At the top of the flow canvas, click on the circular red record button (just to the right of the <span class="uicontrol">Flow Exerciser</span> text) to start the Flow Exerciser. Agree to the confirmation dialog which warns that the message flow is owned by an Application, and after a few seconds the background of the flow canvas will change to a grey colour. Another confirmation dialog will appear with a Ready to record message status. Read through the information on the dialog and click Close.
+										
+										</li>
+									
+										<li> Back at the top of the flow, click on the Send Message icon to create an input message.
+										
+										</li>
+									
+										<li> The Send Message dialog will open with instructions for how to create an input message. Click the New button, type some text (such as the classic <b>Hello world</b> for example!) in the Main window and click Send.
+										
+										</li>
+									
+										<li> A Progress Information dialog will appear showing the message has been sent, and a reply received. The same data should be echoed back in the reply.
+										
+										</li>
+									
+										<li> Congratulations, you have just successfully tested your first message flow! Click on the Close button and a green line should show the path the message took between the HTTPInput and HTTPReply nodes. Use the Flow Exerciser buttons at the top of the message flow to either send more test data or to return the flow to editting mode.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+							
+					</div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>

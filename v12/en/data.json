@@ -208,7 +208,7 @@
 										"details": "A Progress Information dialog will appear showing the message has been sent, and a reply received. The same data should be echoed back in the reply."
 									},
 									{
-										"details": "Congratulations, you have just successfully tested your first message flow! Click on the Close button and a green line should show the path the message took between the HTTPInput and HTTPReply nodes. Use the Flow Exerciser buttons at the top of the message flow to either send more test data or to return the flow to editting mode."
+										"details": "Congratulations, you have just successfully tested your first message flow! Click on the Close button and a blue line should show the path the message took between the HTTPInput and HTTPReply nodes. Use the Flow Exerciser buttons at the top of the message flow to either send more test data or to return the flow to editting mode."
 									}
                                 ]
                             }
